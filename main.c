@@ -12,6 +12,7 @@ void confirmacion(char []);
 
 int main()
 {
+    /*
     int menu;
     Arbol_B arb;
     init(&arb);
@@ -30,6 +31,8 @@ int main()
             default: printf("Opción inválida\n");confirmacion("");break;
         }
     }while(1);
+    */
+    localizacion();
 }
 
 void confirmacion(char str[])
