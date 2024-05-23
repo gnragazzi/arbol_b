@@ -18,7 +18,7 @@ void init(Arbol_B *a)
     a->raiz->cant_elem = 0;
 }
 
-int busqueda_binaria(Nodo n, int x, int *exito)
+int localizacion(Nodo n, int x, int *exito)
 {
     int li, ls, m;
     li = 0;
@@ -44,11 +44,6 @@ int busqueda_binaria(Nodo n, int x, int *exito)
     }
 }
 
-void localizacion()
-{
-    printf("Localización\n");
-}
-
 void split()
 {
     printf("Split\n");
@@ -67,9 +62,9 @@ void baja()
 {
     printf("Baja\n");
 }
-void evocacion_asociativa()
+int evocacion_asociativa(int x, enum bool *exito)
 {
-    printf("Evocación Asociativa\n");
+    //localizacion()   
 }
 void mostrar_estructura()
 {

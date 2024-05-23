@@ -12,10 +12,10 @@ void confirmacion(char []);
 
 int main()
 {
-    /*
     int menu;
     Arbol_B arb;
     init(&arb);
+    char msj[50];
     do
     {
         system(clear);
@@ -25,14 +25,24 @@ int main()
         {
             case 1: alta();confirmacion("");break;
             case 2: baja();confirmacion("");break;
-            case 3: evocacion_asociativa();confirmacion("");break;
+            case 3: 
+            {
+                int elemento = 0;
+                enum bool exito = FALSE;
+                system(clear);
+                printf("Ingrese el elemento que desea buscar en la estructura.\n-? ");
+                scanf("%d",&elemento);
+                evocacion_asociativa(elemento, &exito);
+                if(exito == TRUE) strcpy(msj, "El elemento se encuentra en la estructura.\n");
+                else strcpy(msj, "El elemento no se encuentra en la estructura.\n");
+                confirmacion(msj);
+                break;
+            }
             case 4: mostrar_estructura();confirmacion("");break;
             case 0: confirmacion("Saliendo");exit(1);
             default: printf("Opción inválida\n");confirmacion("");break;
         }
     }while(1);
-    */
-    localizacion();
 }
 
 void confirmacion(char str[])
