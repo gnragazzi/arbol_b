@@ -39,7 +39,56 @@
                             4. pos_hijo<- 0;                            
                         b. Sino
                             1. (nodoPadre,pos_hijo) <- pop(Pila_Nodos)
-                    ii. return split(arbol,nodoActual,nodoPadre,pos_hijo,pos,x,NULL);
+                    ii. return split(arbol,nodoActual,nodoPadre,pos,pos_hijo,x,NULL);
+    - Split
+        + INPUT
+            - arbol: ↑Árbol //arbol-b donde se quiere insertar el elemento
+            - nodoActual: Nodo
+            - nodoPadre: Nodo
+            - pos: int
+            - pos_hijo: int
+            - x: int // elemento a insertar
+            - p-der: ↑Nodo
+        + OUTPUT:
+            - res:resultado
+        + Variables Locales:
+            - n1, n3: int[]
+            - h1, h3: ↑Nodo[]
+            - nuevoNodo: Nodo
+            - i: int
+        + PROCEDIMIENTO
+            1. i<- 0; 
+            2. Para j<-0..⌈m/2⌉-2
+                Si(i<>pos)
+                    b.1 n[j] <- nodo->elementos[i]
+                      2 i<-i+1
+                Sino
+                    a. n[j] <- x
+            3. i<-0
+            4. Para j<-⌈m/2⌉ <- m-2
+                Si(i<>pos)
+                    b.1 n[j] <- nodo->elementos[i]
+                      2 i<-i+1
+                Sino
+                    a. n[j] <- x
+            5. nodo->elementos <- n1
+            6. nuevoNodo->elementos <- n3
+            7. if(p-der<>NULL)
+                1. 
+
+                6.a. Se realiza la misma operación que 1, pero con el arreglo de punteros, agregando p-der en la posición correspondiente. 
+                6.b. Se particiona en 3 el arreglo de punteros.
+                6.c. Se realizan las asignaciones correspondientes al conjunto de punteros de Nodo y Nuevo Nodo
+            7. p-der apunta a Nodo_Nuevo
+            8.  Si cantidad de elementos de Nodo_Padre < m-1
+                    8.a.i. Se inserta el nuevo elemento en Nodo_Padre, realizando los corrimientos necesarios en el arreglo de elementos. 
+                    8.a.ii. Se inserta p-der en Nodo_Padre en la posición correspondiente (realizando corrimientos) del arreglo de punteros
+                    8.a.iii. Retornar EXITO;
+                Sino
+                    8.b.i. Nodo <- NodoPadre y Se asigna a Nodo_Padre el próximo elemento de la pila de Nodos. 
+                    8.b.ii. En caso de que Nodo_Padre sea nulo, se crea un nuevo nodo, se asigna como raiz del árbol; se establece el puntero a Nodo y el p-der como primer y segundo elementos del arreglo de hijos de la raiz, y se agrega X_⌈m/2⌉ como elemento en la primer posición del arreglo de elementos. Retornar EXITO
+                    8.b.iii. Se llama a SPLIT() con x<-X_⌈m/2⌉, 
+                    8.b.iiii. Se retorna el resultado de split.
 ***
 #2da Entrada:
 
